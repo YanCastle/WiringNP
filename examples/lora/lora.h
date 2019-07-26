@@ -10,15 +10,15 @@
 /**
  * 重置复位
  */
-#define PIN_RESET = 6;
+#define PIN_RESET 6;
 // 片选
-#define PIN_CS = 10;
+#define PIN_CS 10;
 // 时钟
-#define PIN_CLK = 14;
+#define PIN_CLK  14;
 // 输入
-#define PIN_MISO = 13;
+#define PIN_MISO  13;
 // 输出
-#define PIN_MOSI = 12;
+#define PIN_MOSI  12;
    
 
 
