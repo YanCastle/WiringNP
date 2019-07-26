@@ -89,9 +89,10 @@ void SPI_Send(unsigned char dat)
 /**
  * 接收SPI数据
  */
-unsigned char SPI_Rec()
+uint8_t SPI_Rec()
 {
-    unsigned char n, dat;
+    uint8_t n;
+    uint8_t dat;
     for (n = 0; n < 8; n++)
     {
         SCK_LOW();
@@ -103,7 +104,7 @@ unsigned char SPI_Rec()
         SCK_HIGH();
     }
     SCK_LOW();
-    return (dat);
+    return dat;
 }
 /**
  * 发送数据
@@ -123,6 +124,7 @@ void LoraWrite(uint8_t addr, uint8_t *data, uint8_t size)
     }
     usleep(1);
     SSN_HIGH();
+
     usleep(1);
 }
 /**
