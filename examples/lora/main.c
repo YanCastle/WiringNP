@@ -11,12 +11,12 @@
 
 
 
-void main(){
+int main(){
     init();
     if(LoraTest()==1){
         printf("Test Success");
     }
     print("Test Finsh");
-    return;
+    return 1;
 }
 
