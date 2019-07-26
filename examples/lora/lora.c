@@ -92,7 +92,7 @@ void SPI_Send(unsigned char dat)
 uint8_t SPI_Rec()
 {
     uint8_t n;
-    uint8_t dat;
+    uint8_t dat=0;
     for (n = 0; n < 8; n++)
     {
         SCK_LOW();
