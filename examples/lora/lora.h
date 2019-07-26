@@ -558,15 +558,15 @@ typedef enum // LORA [1: 4/5, 2: 4/6, 3: 4/7, 4: 4/8]
     CR_4_5 = 0x02,
 } CodingRate_TypeDef;
 
-#define init();
-#define  SCK_LOW();
-#define  SCK_HIGH();
-#define  SSN_LOW();
-#define  SSN_HIGH();
-#define  MOSI_LOW();
-#define  MOSI_HIGH();
-#define  SPI_Send(unsigned char dat);
-#define  SPI_Rec();
-#define  LoraWrite(uint8_t addr, uint8_t *data, uint8_t size);
-#define  LoraRead(uint8_t addr, uint8_t *data, uint8_t size);
-#define  LoraTest();
+extern void init();
+extern void SCK_LOW();
+extern void SCK_HIGH();
+extern void SSN_LOW();
+extern void SSN_HIGH();
+extern void MOSI_LOW();
+extern void MOSI_HIGH();
+extern void SPI_Send(unsigned char dat);
+extern unsigned char SPI_Rec();
+extern void LoraWrite(uint8_t addr, uint8_t *data, uint8_t size);
+extern void LoraRead(uint8_t addr, uint8_t *data, uint8_t size);
+extern int LoraTest();
