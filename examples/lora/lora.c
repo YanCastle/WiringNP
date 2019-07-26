@@ -113,14 +113,17 @@ void LoraWrite(uint8_t addr, uint8_t *data, uint8_t size)
     uint8_t i;
 
     SSN_LOW();
-
+    usleep(1);
     SPI_Send(addr | 0x80);
+    usleep(1);
     for (i = 0; i < size; i++)
     {
         SPI_Send(data[i]);
+    usleep(1);
     }
-
+    usleep(1);
     SSN_HIGH();
+    usleep(1);
 }
 /**
  * 读取数据
@@ -130,13 +133,19 @@ void LoraRead(uint8_t addr, uint8_t *dat, uint8_t size)
 
     uint8_t i;
 
+    usleep(1);
     SSN_LOW();
+    usleep(1);
 
     SPI_Send(addr & 0x7F);
+    usleep(1);
     for (i = 0; i < size; i++)
     {
         dat[i] = SPI_Rec(); // Store data from last data RX
+    usleep(1);
     }
 
+    usleep(1);
     SSN_HIGH();
+    usleep(1);
 }
