@@ -30,7 +30,7 @@ bool LoraTest(){
 void main(){
     init();
     if(LoraTest()){
-        printf('Test Success')
+        printf("Test Success")
     }
 }
 
