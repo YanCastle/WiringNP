@@ -31,7 +31,7 @@ void init()
     digitalWrite(PIN_RESET, HIGH);
     delay(1000);
     digitalWrite(PIN_RESET, LOW);
-    printf('Finish Reset')
+    printf("Finish Reset")
 }
 /**
  * 时钟信号
