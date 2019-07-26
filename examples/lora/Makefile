@@ -17,7 +17,7 @@ LDLIBS    = -lwiringPi -lwiringPiDev -lpthread -lm
 # Should not alter anything below this line
 ###############################################################################
 
-SRC	=	main.c
+SRC	=	lora.c
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -25,9 +25,9 @@ BINS	=	$(SRC:.c=)
 
 all:	$(BINS)
 
-main:	main.o
+lora:	lora.o
 	@echo [link]
-	@$(CC) -o $@ main.o $(LDFLAGS) $(LDLIBS)
+	@$(CC) -o $@ lora.o $(LDFLAGS) $(LDLIBS)
 
 .c.o:
 	@echo [CC] $<
