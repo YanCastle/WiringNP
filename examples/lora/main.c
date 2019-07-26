@@ -16,7 +16,7 @@ int main(){
     if(LoraTest()==1){
         printf("Test Success");
     }
-    print("Test Finsh");
+    printf("Test Finsh");
     return 1;
 }
 
