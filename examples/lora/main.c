@@ -13,12 +13,12 @@ int LoraTest(){
 
   uint8_t test = 0;
   
-  LoraWrite( REG_LR_OPMODE, RFLR_OPMODE_SLEEP );            
-  LoraWrite( REG_LR_OPMODE, 0x80|RFLR_OPMODE_SLEEP );       
-  LoraWrite( REG_LR_OPMODE, 0x80|RFLR_OPMODE_STANDBY );
+  LoraWrite( REG_LR_OPMODE, RFLR_OPMODE_SLEEP ,1);            
+  LoraWrite( REG_LR_OPMODE, 0x80|RFLR_OPMODE_SLEEP ,1 );       
+  LoraWrite( REG_LR_OPMODE, 0x80|RFLR_OPMODE_STANDBY ,1 );
   
-  LoraWrite( REG_LR_HOPPERIOD,0x91 );
-  LoraRead( REG_LR_HOPPERIOD,&test);
+  LoraWrite( REG_LR_HOPPERIOD,0x91 ,1 );
+  LoraRead( REG_LR_HOPPERIOD,&test ,1);
   
   if(test!=0x91)
     return 0;    
