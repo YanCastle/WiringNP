@@ -6,8 +6,8 @@
 #include <time.h>
 #include <pthread.h>
 
+#include "lora.h"
 #include <wiringPi.h>
-
 
 /**
  * 初始化操作
@@ -58,7 +58,6 @@ void SSN_HIGH()
 {
     digitalWrite(PIN_CS, HIGH);
 }
-
 
 void MOSI_LOW()
 {
@@ -126,17 +125,18 @@ void LoraWrite(uint8_t addr, uint8_t data, uint8_t size)
 /**
  * 读取数据
  */
-void LoraRead(uint8_t addr,uint8_t *dat,uint8_t size){
-    
-  uint8_t i;
-  
-  SSN_LOW();  
+void LoraRead(uint8_t addr, uint8_t *dat, uint8_t size)
+{
 
-  SPI_Send(addr & 0x7F);
-  for( i = 0; i < size; i++ )
-  {   
-    buffer[i] = SPI_Rec();                 // Store data from last data RX
-  }  
+    uint8_t i;
 
-  SSN_HIGH();
+    SSN_LOW();
+
+    SPI_Send(addr & 0x7F);
+    for (i = 0; i < size; i++)
+    {
+        buffer[i] = SPI_Rec(); // Store data from last data RX
+    }
+
+    SSN_HIGH();
 }
