@@ -9,7 +9,7 @@
 #include <wiringPi.h>
 #include "lora.h"
 
-bool LoraTest(){
+int LoraTest(){
 
   uint8_t test = 0;
   
@@ -21,15 +21,15 @@ bool LoraTest(){
   LoraRead( REG_LR_HOPPERIOD,&test);
   
   if(test!=0x91)
-    return false;    
+    return 0;    
   else
-    return true;
+    return 1;
 }
 
 
 void main(){
     init();
-    if(LoraTest()){
+    if(LoraTest()==1){
         printf("Test Success")
     }
 }
