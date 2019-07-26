@@ -151,3 +151,20 @@ void LoraRead(uint8_t addr, uint8_t *dat, uint8_t size)
     SSN_HIGH();
     usleep(1);
 }
+
+int LoraTest(){
+
+  uint8_t test = 0;
+  
+  LoraWrite( REG_LR_OPMODE, RFLR_OPMODE_SLEEP ,1);            
+  LoraWrite( REG_LR_OPMODE, 0x80|RFLR_OPMODE_SLEEP ,1 );       
+  LoraWrite( REG_LR_OPMODE, 0x80|RFLR_OPMODE_STANDBY ,1 );
+  
+  LoraWrite( REG_LR_HOPPERIOD,0x91 ,1 );
+  LoraRead( REG_LR_HOPPERIOD,&test ,1);
+  
+  if(test!=0x91)
+    return 0;    
+  else
+    return 1;
+}
