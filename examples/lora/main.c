@@ -32,5 +32,7 @@ void main(){
     if(LoraTest()==1){
         printf("Test Success");
     }
+    print("Test Finsh");
+    return;
 }
 
