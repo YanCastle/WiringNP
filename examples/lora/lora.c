@@ -108,7 +108,7 @@ unsigned char SPI_Rec()
 /**
  * 发送数据
  */
-void LoraWrite(uint8_t addr, uint8_t data, uint8_t size)
+void LoraWrite(uint8_t addr, uint8_t *data, uint8_t size)
 {
     uint8_t i;
 
