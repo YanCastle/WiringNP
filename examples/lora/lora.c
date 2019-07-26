@@ -117,7 +117,7 @@ void LoraWrite(uint8_t addr, uint8_t data, uint8_t size)
     SPI_Send(addr | 0x80);
     for (i = 0; i < size; i++)
     {
-        SPI_Send(buffer[i]);
+        SPI_Send(data[i]);
     }
 
     SSN_HIGH();
@@ -135,7 +135,7 @@ void LoraRead(uint8_t addr, uint8_t *dat, uint8_t size)
     SPI_Send(addr & 0x7F);
     for (i = 0; i < size; i++)
     {
-        buffer[i] = SPI_Rec(); // Store data from last data RX
+        dat[i] = SPI_Rec(); // Store data from last data RX
     }
 
     SSN_HIGH();
