@@ -567,5 +567,5 @@ void MOSI_LOW();
 void MOSI_HIGH();
 void SPI_Send(unsigned char dat);
 unsigned char SPI_Rec();
-void LoraWrite(uint8_t addr, uint8_t data, uint8_t size);
-void LoraRead(uint8_t addr, uint8_t data, uint8_t size);
+void LoraWrite(uint8_t addr, uint8_t *data, uint8_t size);
+void LoraRead(uint8_t addr, uint8_t *data, uint8_t size);
